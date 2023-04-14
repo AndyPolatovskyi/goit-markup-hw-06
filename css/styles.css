@@ -712,6 +712,7 @@ img {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   padding: 8px 16px;
+  background-color: transparent;
 }
 
 .footer-subscribe-btn {
@@ -797,7 +798,7 @@ img {
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1) rotate(0);
   transition:  transform 250ms linear;
-  padding: 24px;
+  padding: 72px 24px 24px;
 }
 
 .backdrop.is-hidden .modal {
@@ -812,10 +813,12 @@ img {
   fill: var(--logo-secondary);
   background-color: var(--background-modal-close);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-left: auto;
-  margin-bottom: 24px;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 24px;
+  right: 24px;
 }
 
 .modal-close-btn:hover,
@@ -873,16 +876,16 @@ img {
   border-color: var(--buttons-text-color);
 }
 
-.modal-input:focus + .modal-icon {
-  fill: var(--buttons-text-color);
-}
-
 .modal-icon {
   position: absolute;
   left: 18px;
   top: 50%;
   transform: translateY(-50%);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus + .modal-icon {
+  fill: var(--buttons-text-color);
 }
 
 
@@ -900,7 +903,7 @@ img {
   border-radius: 4px;
   resize: none;
   outline: transparent;
-  
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-textarea:focus {
@@ -998,7 +1001,11 @@ img {
 } */
 
 .privacy-policy {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
   margin-left: 2px;
+  color: var(--buttons-text-color);
 }
 
 
